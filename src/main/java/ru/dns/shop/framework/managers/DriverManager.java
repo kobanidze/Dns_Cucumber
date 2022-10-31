@@ -4,7 +4,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.FluentWait;
-
+import ru.dns.shop.framework.utils.PropConst;
 import java.time.Duration;
 
 public class DriverManager {
@@ -12,6 +12,7 @@ public class DriverManager {
     private static DriverManager INSTANCE = null;
 
     private WebDriver driver;
+    private TestPropManager propManager = TestPropManager.getInstance();
 
     FluentWait<WebDriver> fluentWait = new FluentWait<>(getDriver())
             .withTimeout(Duration.ofSeconds(30))
@@ -36,8 +37,8 @@ public class DriverManager {
         return driver;
     }
 
-    private void initDriver() {
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/webdriver/chromedriver.exe");
+    public void initDriver() {
+        System.setProperty("webdriver.chrome.driver", propManager.getProperty(PropConst.PATH_CHROME_DRIVER_WINDOWS));
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));

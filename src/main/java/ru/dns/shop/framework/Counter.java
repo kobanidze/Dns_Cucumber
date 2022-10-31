@@ -56,8 +56,10 @@ public class Counter extends BasePage {
         System.out.println(totalPrice);
     }
 
-    public void priceInCartShower() {
+    public void priceInCartShower() throws InterruptedException {
         cartPrice += shower(priceInCart);
+        Thread.sleep(1500);
+        //добавить ожидание появления фрейма
     }
 
 

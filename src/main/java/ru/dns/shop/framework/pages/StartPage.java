@@ -45,7 +45,8 @@ public class StartPage extends BasePage{
 
     public void pressCityButton() throws InterruptedException {
         cityButton.click();
-//        Thread.sleep(2000);
+        // ожидать появления элемента "Москва"
+        Thread.sleep(2000);
     }
 
     public void waitUntilAvailible() {

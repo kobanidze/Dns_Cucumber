@@ -44,7 +44,7 @@ public class SimpleCheckTest extends BaseTests {
         productPage.pressBuyButton();
         counter.rememberTotalPrice();
         counter.priceInCartShower();
-        Thread.sleep(1500);
+
 
         topBlock.goToCart();
 

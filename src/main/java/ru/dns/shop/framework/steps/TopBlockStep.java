@@ -18,7 +18,7 @@ public class TopBlockStep {
     }
 
     @И("^Переходим в корзину$")
-    public void goToCart() {
+    public void goToCart() throws InterruptedException {
         topBlock.goToCart();
     }
 }

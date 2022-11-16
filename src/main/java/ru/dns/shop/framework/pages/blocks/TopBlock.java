@@ -48,7 +48,8 @@ public class TopBlock extends BasePage {
         Assert.fail("Тэг с именем " + tagName + " не найден в списке поиска товаров");
     }
 
-    public void goToCart(){
+    public void goToCart() throws InterruptedException {
+        Thread.sleep(2000);
         ((JavascriptExecutor) driverManager.getDriver()).
                 executeScript("document.evaluate(\"//div[@class='header-menu-wrapper']/div[@class='buttons']/a[@class='ui-link cart-link']\", document).iterateNext().click()");
             }

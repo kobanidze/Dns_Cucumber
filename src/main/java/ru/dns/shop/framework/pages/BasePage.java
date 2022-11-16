@@ -5,6 +5,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -21,6 +22,10 @@ public class BasePage {
 
     protected DriverManager driverManager = DriverManager.getINSTANCE();
     protected WebDriverWait wait = new WebDriverWait(driverManager.getDriver(), Duration.ofSeconds(10), Duration.ofMillis(1000));
+
+    public BasePage() {
+        PageFactory.initElements(driverManager.getDriver(), this);
+    }
 
     public void fulfillBar(WebElement xpath, String object){
         xpath.click();

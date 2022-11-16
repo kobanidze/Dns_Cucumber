@@ -13,7 +13,7 @@ public class StartPage extends BasePage{
     @FindBy(xpath = "(//button[contains(.,'Сменить город')])[1]")
     private WebElement changeCityButton;
 
-    @FindBy(xpath = "//input[@class='base-ui-input-search__input']")
+    @FindBy(xpath = "//input[@data-city-select='city-modal-input-attr']")
     private WebElement searchCityBar;
 
     @FindBy(xpath = "//mark[contains(., Москва)]")

@@ -13,6 +13,7 @@ public class InitManager {
 
     public static void initFramework() {
         driverManager.getDriver().manage().window().maximize();
+        driverManager.getDriver().get(props.getProperty(BASE_URL));
         driverManager.getDriver().manage().timeouts()
                 .implicitlyWait(Duration.ofSeconds(Integer.parseInt(props.getProperty(IMPLICITLY_WAIT))));
         driverManager.getDriver().manage().timeouts()
